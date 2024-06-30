@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: workshop
+  creationTimestamp: null
+  labels:
+    app: my-notes
+  name: my-notes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-notes
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-notes
+    spec:
+      containers:
+      - image: loka07/notes:v1
+        name: notes
+        ports:
+        - containerPort: 4000
+        resources: {}
+status: {}

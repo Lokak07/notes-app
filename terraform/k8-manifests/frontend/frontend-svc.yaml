@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: workshop
+  creationTimestamp: null
+  labels:
+    app: my-notes
+  name: front-svc
+spec:
+  ports:
+  - name: 4000-4000
+    port: 4000
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    app: front-svc
+  type: ClusterIP
+status:
+  loadBalancer: {}

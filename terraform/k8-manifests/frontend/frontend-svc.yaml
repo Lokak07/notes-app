@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: front-svc
   namespace: workshop
   creationTimestamp: null
   labels:
     app: my-notes
-  name: front-svc
 spec:
   ports:
   - name: 4000-4000
@@ -14,6 +14,6 @@ spec:
     targetPort: 4000
   selector:
     app: front-svc
-  type: ClusterIP
+  type: NodePort
 status:
   loadBalancer: {}

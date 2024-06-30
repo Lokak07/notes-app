@@ -19,7 +19,7 @@ spec:
         app: my-notes
     spec:
       containers:
-      - image: loka07/notes:v1
+      - image: loka07/notes:v2
         name: notes
         ports:
         - containerPort: 4000

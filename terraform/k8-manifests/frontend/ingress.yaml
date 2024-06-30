@@ -7,19 +7,12 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/subnets: subnet-0b1daace6027d3c54,subnet-0c5a2402298bea8bf
 spec:
   ingressClassName: alb
   rules:
-    - host: 
-      http:
+    - http:
         paths:
-          - path: /ok
-            pathType: Prefix
-            backend:
-              service:
-                name: mongodb-svc
-                port:
-                  number: 27017
           - path: /
             pathType: Prefix
             backend:
@@ -27,3 +20,11 @@ spec:
                 name: front-svc
                 port:
                   number: 4000
+          - path: /ok
+            pathType: Prefix
+            backend:
+              service:
+                name: mongodb-svc
+                port:
+                  number: 27017
+

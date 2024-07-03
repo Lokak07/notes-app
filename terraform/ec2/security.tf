@@ -25,7 +25,7 @@ resource "aws_security_group" "allow_tls" {
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"] # Allow HTTP from any IP address
-  } 
+  }
 
   ingress {
     description = "SSH"
